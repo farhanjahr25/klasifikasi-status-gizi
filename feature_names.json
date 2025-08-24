@@ -1,0 +1,11 @@
+{
+    "feature_names": [
+        "jk",
+        "usia_saat_ukur",
+        "bb_lahir",
+        "tb_lahir",
+        "berat",
+        "tinggi",
+        "lila"
+    ]
+}
