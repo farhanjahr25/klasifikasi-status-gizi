@@ -21,14 +21,20 @@ def gizi_prediction_system():
 
     # Input pengguna
     jk = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
-    usia_saat_ukur = st.number_input("Usia saat Ukur (bulan)", min_value=0)
-    bb_lahir = st.number_input("Berat Badan Lahir (kg)", min_value=0.0, step=0.1)
-    tb_lahir = st.number_input("Tinggi Badan Lahir (cm)", min_value=0.0, step=0.1)
-    berat = st.number_input("Berat Badan Saat Ini (kg)", min_value=0.0, step=0.1)
-    tinggi = st.number_input("Tinggi Badan Saat Ini (cm)", min_value=0.0, step=0.1)
-    lila = st.number_input("Lingkar Lengan Atas (cm)", min_value=0.0, step=0.1)
+    usia_saat_ukur = st.number_input(
+        "Usia saat Ukur (bulan)", 
+        min_value=0.0, 
+        max_value=60.0, 
+        step=1.00, 
+        format="%.2f"
+    )
+    bb_lahir = st.number_input("Berat Badan Lahir (kg)", min_value=0.0, step=1.00, format="%.2f")
+    tb_lahir = st.number_input("Tinggi Badan Lahir (cm)", min_value=0.0, step=1.00, format="%.2f")
+    berat = st.number_input("Berat Badan Saat Ini (kg)", min_value=0.0, step=1.00, format="%.2f")
+    tinggi = st.number_input("Tinggi Badan Saat Ini (cm)", min_value=0.0, step=1.00, format="%.2f")
+    lila = st.number_input("Lingkar Lengan Atas (cm)", min_value=0.0, step=1.00, format="%.2f")
 
-    jk_numeric = 1 if jk == "Laki-laki" else 0
+    jk_numeric = 1 if jk == "Perempuan" else 0
 
     input_dict = {
         "jk": jk_numeric,
